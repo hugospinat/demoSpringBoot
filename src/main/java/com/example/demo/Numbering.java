@@ -50,7 +50,7 @@ public class Numbering {
                     sb.append(format(new SimpleDateFormat("yyyy").format(user.getBirthDate()), c));
                     break;
                 case "counter":
-                    sb.append(format(String.format("%05d", this.counter), c)); // change this line to have variable number of chars
+                    sb.append(format(String.format("%0" + c.getLength() + "d", this.counter), c)); // change this line to have variable number of chars
                     break;
             }
         }
