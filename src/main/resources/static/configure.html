@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Configure</h2>
+
+<form id="configureForm">
+  <label for="criteria">Criteria (JSON):</label><br>
+  <textarea id="criteria" name="criteria" rows="4" cols="50"></textarea>
+  <input type="submit" value="Submit">
+</form>
+
+
+<script>
+document.getElementById('configureForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const criteria = document.getElementById('criteria').value;
+  fetch('/configure', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: criteria,
+  });
+});
+</script>
+
+</body>
+</html>

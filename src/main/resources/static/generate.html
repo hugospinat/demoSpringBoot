@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Generate</h2>
+
+<form id="generateForm">
+  <label for="user">User (JSON):</label><br>
+  <textarea id="user" name="user" rows="4" cols="50"></textarea>
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+
+document.getElementById('generateForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const user = document.getElementById('user').value;
+  fetch('/generate', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: user,
+  })
+  .then(response => response.text())
+  .then(data => {
+    console.log('Generated: ', data);
+  });
+});
+</script>
+
+</body>
+</html>
