@@ -30,12 +30,6 @@ public class Numbering {
         this.counter = counter;
     }
 
-    /** Arrays.asList(
-        new NumberingCriteria("name", 10, "", "", 1), 
-        new NumberingCriteria("firstName", 10, "", "", 2), 
-        new NumberingCriteria("birthDate", 4, "", "", 3), 
-        new NumberingCriteria("counter", 5, "", "", 4));
-        **/
     public Numbering() {
         this.criteria = new ArrayList<>();
         counter = 0L;
